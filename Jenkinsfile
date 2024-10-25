@@ -17,7 +17,8 @@ pipeline {
                         ssh -o StrictHostKeyChecking=no $FLASK_EC2 '
                         cd /home/ec2-user/FlaskAutomations &&
                         git pull origin main &&
-                        nohup python3 app.py'
+                        
+                        nohup python3 app.py &'
                     '''
                 }
             }
