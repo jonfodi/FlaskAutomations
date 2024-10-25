@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Flask Automation - Running!"
+    return "suppppp"
 
 @app.route('/trigger')
 def trigger():
