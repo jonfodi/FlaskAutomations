@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "hey chad!"
+    return "test"
 
 @app.route('/trigger')
 def trigger():
