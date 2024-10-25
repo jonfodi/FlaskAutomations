@@ -22,7 +22,7 @@ pipeline {
                         cd /home/ec2-user/FlaskAutomations &&
                         git pull origin main &&
                         
-                        nohup python3 app.py > flask_$(date +"%Y%m%d%H%M%S").log 2>&1 &
+                        setsid nohup python3 app.py > /dev/null 2>&1 < /dev/null &
                         disown
 '
                     '''
