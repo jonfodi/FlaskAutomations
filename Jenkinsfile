@@ -23,6 +23,7 @@ pipeline {
                         git pull origin main &&
                         
                         nohup python3 app.py > flask_$(date +"%Y%m%d%H%M%S").log 2>&1 &
+                        disown
 '
                     '''
                 }
