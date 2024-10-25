@@ -15,6 +15,10 @@ pipeline {
                 sshagent(credentials: [SSH_CREDENTIALS_ID]) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no $FLASK_EC2 '
+                        PID=$(lsof -t -i:5004)
+                        if [ ! -z "$PID" ]; then
+                            kill -9 $PID
+                        fi
                         cd /home/ec2-user/FlaskAutomations &&
                         git pull origin main &&
                         
