@@ -22,7 +22,7 @@ pipeline {
                         cd /home/ec2-user/FlaskAutomations &&
                         git pull origin main &&
                         
-                        nohup python3 app.py > /dev/null 2>&1 &
+                        nohup setsid python3 app.py > /dev/null 2>&1 &
                         exit
 '
                     '''
